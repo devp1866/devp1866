@@ -3,7 +3,7 @@
 
 <img align="right"
   alt="Coding"
-  width="550"
+  width="450"
   src="https://github.com/user-attachments/assets/6dafaa6b-5f3b-4450-86e4-06acad51dc93"/>
 
 ---
