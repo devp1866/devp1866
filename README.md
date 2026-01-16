@@ -32,7 +32,7 @@ My learning journey revolves around building intelligent systems, exploring mode
 - 💬 Ask me about **Python**, **React**, **Machine Learning**, **OpenCV**, and **Data Science**  
 - 👯 Open to collaborate on **AI-driven web projects** and **intelligent dashboards**  
 - 💡 Interested in **research, hackathons, and community projects**
-- 🌐 Check out my portfolio: [Portfolio](https://devp1866.framer.website/)  
+- 🌐 Check out my portfolio: [Portfolio](https://devkumarpatel.vercel.app/)
 - 📫 Reach me at **devp1866@gmail.com**  
 
 ---
