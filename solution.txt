@@ -1,0 +1,60 @@
+Failure cause
+- The git-auto-commit-action failed when trying to add "contrib-heatmap.svg": fatal: pathspec 'contrib-heatmap.svg' did not match any files (exit 128). The log shows data/contributions.json was modified (M data/contributions.json) but the SVG file wasn’t present at commit time, so git add failed.
+
+Fix options (pick one or combine)
+
+1) Easiest quick fix — only commit the file that definitely exists
+- If you only need to commit the JSON, change the action input to only include that file. In .github/workflows/update-profile-art.yml replace the commit step with:
+  - uses: stefanzweifel/git-auto-commit-action@v5
+    with:
+      commit_message: "chore: refresh contribution graph [skip ci]"
+      file_pattern: "data/contributions.json"
+
+2) Robust fix — commit only files that actually exist (recommended)
+- Replace the action with an explicit commit step that adds files conditionally and avoids failing when a file is missing. This is more robust and gives clearer logging:
+
+Add a step after your generation steps:
+
+- name: Commit generated files
+  run: |
+    set -euo pipefail
+    git config user.name "github-actions[bot]"
+    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    # Add files if they exist
+    git add data/contributions.json || true
+    if [ -f contrib-heatmap.svg ]; then
+      git add contrib-heatmap.svg
+    fi
+    # Only commit if anything staged
+    if git diff --cached --quiet; then
+      echo "No changes to commit"
+    else
+      git commit -m "chore: refresh contribution graph [skip ci]"
+      git push
+    fi
+
+This avoids the action failing when the SVG is not generated and gives better control over commit/push.
+
+3) Make sure the SVG is actually created at the expected path
+- If you expect contrib-heatmap.svg to be generated, confirm the rendering script writes to the repository root (or update path). Add a quick debug step before the commit to see where files were created:
+
+- name: Debug generated files
+  run: |
+    echo "Working dir: $(pwd)"
+    ls -la
+    ls -la data || true
+
+- If the script writes the SVG into another directory (e.g., output/ or scripts/output/), either update the script to write contrib-heatmap.svg in the repo root, or change the commit step to reference the actual path (e.g., output/contrib-heatmap.svg).
+
+Example: if render_heatmap_svg.py currently writes to output/contrib-heatmap.svg, change the file_pattern or commit script to use that path, or modify the Python script to write to repo root:
+
+# in render_heatmap_svg.py (pseudocode)
+output_path = Path("contrib-heatmap.svg")  # ensure this is where the workflow expects it
+output_path.write_text(svg_text, encoding="utf-8")
+
+Recommended action
+- Implement option 2 (conditional commit step) to make the workflow resilient to missing artifacts.
+- Add the debug/ls step temporarily to confirm where files are created.
+- If you want to keep using stefanzweifel/git-auto-commit-action, ensure the file_pattern only references files that will always exist, or update the generator to always create the SVG before the commit step.
+
+If you want, I can produce a full updated workflow YAML (with the conditional commit step and debug step inserted) to paste into your repo.
