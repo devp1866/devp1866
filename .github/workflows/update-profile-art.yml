@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
@@ -26,13 +30,37 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git switch main || git checkout -B main
+
           git add data/contributions.json || true
           if [ -f data/contrib-heatmap.svg ]; then
             git add data/contrib-heatmap.svg
           fi
+
           if git diff --cached --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "chore: refresh contribution graph [skip ci]"
-            git push
+            exit 0
+          fi
+
+          git commit -m "chore: refresh contribution graph [skip ci]"
+
+          MAX_RETRIES=3
+          for i in $(seq 1 "$MAX_RETRIES"); do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin main; then
+                echo "Pushed successfully"
+                break
+              fi
+            else
+              git rebase --abort || true
+            fi
+            echo "Push attempt $i failed, retrying..."
+            sleep 1
+          done
+
+          if ! git push origin main; then
+            echo "Attempting force-with-lease"
+            git push --force-with-lease origin main
           fi
