@@ -1,72 +1,36 @@
-<h1 align="center">👋 Hi, I'm <strong>Devkumar Patel</strong></h1>
-<h3 align="center">Computer Engineer | Data Science & Frontend Development Enthusiast</h3>
+<div align="center">
 
-<img align="right"
-  alt="Coding"
-  width="400"
-  src="https://github.com/user-attachments/assets/6dafaa6b-5f3b-4450-86e4-06acad51dc93"/>
+<h3><code>dev@github ~ $ whoami</code></h3>
+<table>
+  <tr>
+    <td valign="top"><img src="./data/dev-ascii.svg" width="370" /></td>
+    <td valign="top"><img src="./data/wordmark-rock.svg" width="490" /></td>
+  </tr>
+</table>
 
----
+<h3><code>dev@github ~ $ ./contributions.sh</code></h3>
+<img src="./data/contrib-heatmap.svg" width="860" />
 
-### 🧭 About Me  
+<br><br>
 
-I am a passionate **Computer Engineer from India** specializing in **Data Science, Machine Learning, and Frontend Web Development**.  
-I enjoy transforming raw ideas into real, scalable, and impactful applications — combining **AI-driven intelligence** with **beautiful user interfaces**.  
+<h3><code>dev@github ~ $ ./links.sh</code></h3>
 
-My learning journey revolves around building intelligent systems, exploring modern web technologies, and creating solutions that make automation and user experiences seamless.
+<p><b>Junior Data Scientist · ML Practitioner</b></p>
 
----
+<a href="https://devkumarpatel.vercel.app/">
+  <img src="https://img.shields.io/badge/Portfolio-Devkumar-0d1117?style=plastic&logo=vercel&logoColor=white" height="30" alt="Portfolio">
+</a>
 
-### 🚀 What I’m Currently Doing  
+<a href="https://linkedin.com/in/avivashishta">
+  <img src="https://img.shields.io/badge/LinkedIn-Devkumar-0A66C2?style=plastic&logo=linkedin&logoColor=white" height="30" alt="LinkedIn">
+</a>
 
-- 🌱 Exploring **Machine Learning**, **Deep Learning**, and **AI Applications**  
-- 💻 Building **real-world ML projects** such as a Face Recognition Attendance System  
-- 🎨 Enhancing my **Frontend Development** skills (React, Next.js, Tailwind CSS)  
-- 🧩 Working on integrating **Data Science pipelines** into web-based solutions  
-- 📘 Constantly learning & contributing to open-source  
 
----
+<a href="https://www.kaggle.com/devp1866">
+  <img src="https://img.shields.io/badge/Kaggle-Devkumar-035a7d?style=plastic&logo=kaggle&logoColor=white" height="30" alt="Kaggle">
+</a>
 
-### 🤝 Let’s Collaborate  
 
-- 💬 Ask me about **Python**, **React**, **Machine Learning**, **OpenCV**, and **Data Science**  
-- 👯 Open to collaborate on **AI-driven web projects** and **intelligent dashboards**  
-- 💡 Interested in **research, hackathons, and community projects**
-- 🌐 Check out my portfolio: [Portfolio](https://devkumarpatel.vercel.app/)
-- 📫 Reach me at **devp1866@gmail.com**  
+<br>
 
----
-
-### 🤝 Connect With Me 
-
-<p align="left">
-<a href="https://x.com/devp1866" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="devpatel_7" height="30" width="40" /></a>
-<a href="https://www.linkedin.com/in/devp1866/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="devp1866" height="30" width="40" /></a>
-<a href="https://kaggle.com/devp1866" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="devp1866" height="30" width="40" /></a>
-<a href="https://instagram.com/_devpatel_7" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="_devpatel_7" height="30" width="40" /></a>
-<a href="https://codeforces.com/profile/devpatel_7" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/codeforces.svg" alt="devpatel_7" height="30" width="40" /></a>
-<a href="https://discord.com/channels/@me" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="discord" height="30" width="40" /></a>
-</p>
-
----
-
-### ✍️ Inspirational Quote  
-> “Code is like humor. When you have to explain it, it’s bad.” — Cory House  
-
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
-
----
-
-### ⚡ Fun Fact  
-I turn caffeine and curiosity into clean code ☕💻 — and my sarcasm compiles perfectly in any language 😄  
-
----
-
-### 🏆 GitHub Profile Optimization  
-
-If you like my work, consider leaving a ⭐ on repositories you find useful!  
-It motivates me to keep building smarter AI and cleaner UI solutions.  
-
----
-
-<!-- Created with ❤️ by Devkumar Patel -->
+</div>
