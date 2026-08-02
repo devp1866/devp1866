@@ -33,10 +33,16 @@ jobs:
 
           git switch main || git checkout -B main
 
-          git add data/contributions.json || true
+          echo "Checking generated files..."
+          ls -la data || true
           if [ -f data/contrib-heatmap.svg ]; then
-            git add data/contrib-heatmap.svg
+            echo "Found data/contrib-heatmap.svg"
+          else
+            echo "data/contrib-heatmap.svg was not generated"
           fi
+
+          git add --all data || true
+          git add data/contributions.json || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
