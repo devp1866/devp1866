@@ -156,6 +156,11 @@ def fetch_days():
 
         tooltip = tooltip_lookup.get(cell.get("id"), "")
 
+        if date == datetime.date.today().isoformat():
+            print("DATE:", date)
+            print("CELL ID:", cell.get("id"))
+            print("TOOLTIP:", repr(tooltip))
+
         count = parse_tooltip(tooltip)
 
         days.append(
@@ -363,7 +368,7 @@ def build_data(days):
         "username": USERNAME,
 
         "generated_at": (
-            datetime.datetime.utcnow()
+            datetime.datetime.now(datetime.timezone.utc)
             .replace(microsecond=0)
             .isoformat()
             + "Z"
@@ -454,6 +459,7 @@ def main():
 
     try:
         days = fetch_days()
+        
 
         data = build_data(days)
 
