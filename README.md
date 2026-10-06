@@ -21,7 +21,7 @@
   <img src="https://img.shields.io/badge/Portfolio-Devkumar-0d1117?style=plastic&logo=vercel&logoColor=white" height="30" alt="Portfolio">
 </a>
 
-<a href="https://linkedin.com/in/avivashishta">
+<a href="https://linkedin.com/in/devp1866">
   <img src="https://img.shields.io/badge/LinkedIn-Devkumar-0A66C2?style=plastic&logo=linkedin&logoColor=white" height="30" alt="LinkedIn">
 </a>
 
